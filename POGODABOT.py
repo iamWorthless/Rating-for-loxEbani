@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import threading
 import time
 
-TOKEN = "8259329761:AAGJuvvr56-zuWFd3p5t1xJXcyXcNFf3V3s"
+TOKEN = ""
 
 stop_sending = False
 sending_thread = None
@@ -82,4 +82,5 @@ def message_reply(message):
         pogoda = soup.find("p", class_="AppFact_warning__8kUUn").text
         pogoda = temp + temp2 + temp3 + " " + pogoda
         bot.send_message(message.chat.id, pogoda)
+
 bot.infinity_polling()
